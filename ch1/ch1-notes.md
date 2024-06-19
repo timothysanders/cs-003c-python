@@ -102,3 +102,13 @@
 - `exception`: class that signals a condition that prevents the program from continuing normally. when these occur, an object of the exception class is thrown
 - `run-time error`: an error in a syntactically correct program that causes it to act differently from its specification
 - `logic error`: error in a syntactically correct program that causes it to act different from its specification
+
+## 1.9 Problem Solving: Algorithm Design
+- Computers can only do what you tell them to do, if you can't give it written instructions, there will be no way for it to implement what you want
+- Pseudocode can be used to create an informal description of what a program does
+- Pseudocode should describe steps that are unambiguous, executable, and terminating
+- A sequence of steps that is unambiguous, executable, and terminating is called an algorithm
+- Existence of an algorithm is a prerequisite for programming a task
+### Definitions
+- `pseudocode`: high-level description of actions of a program or algorithm, typically using English or informal programming language syntax
+- `algorithm`: an unambiguous, executable, and terminating specification of a way to solve a problem
