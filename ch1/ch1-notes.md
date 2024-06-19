@@ -63,6 +63,11 @@
 - Compiler reads the source code (Python instructions) and translates those instructions into byte code
 - Byte codes are very simple instructions understood by the virtual machine, which is a separate program similar to the CPU of a computer
 - After the compiler has translated your program into virtual machine instructions, they are executed by that virtual machine
+- Your Python source code itself doesn't contain all the information that the virtual machine needs, many functions are implemented in the python standard library
+- Specialized tasks may require the installation of packages
+- Files containing virtual machine instructions have an extension of `.pyc` and are created by the compiler
 ### Definitions
 - `compiler`: program that translates code from a high-level language (like Python) into machine instructions (such as byte code for the Python virtual machine)
 - `source code`: instructions in a programming language that need to be translated before execution on a computer
+- `byte code`: instructions for the python virtual machine
+- `virtual machine`: a program that simulates a CPU that can be implemented efficiently on a variety of actual machines. A given program in Python byte code can be executed by any Python virtual machine, regardless of which CPU is used to run the virtual machine itself
