@@ -85,3 +85,20 @@
 - `function`: sequence of statements that can be invoked multiple times, with different values for its parameter variables
 - `argument`: value supplied to a function or method call, or one of the values combined by an operator
 - `string`: a sequence of characters
+
+## 1.8 Errors
+- Compile-time errors show up with translating python instructions into executable form, these are detected before your code actually runs
+- Compile-time errors are sometimes called syntax errors, when these errors are found, no executable program is created
+- Error messages may not always be super helpful
+- Some errors only show up when the program is executed itself, these are called run-time errors (or exceptions)
+- Sometimes the term logic error is used in place of a run-time error
+- Errors are unavoidable in the program development process, many syntax errors are likely to show up, but will be found at compilation time
+- Run-time errors are more insidious, harder to find and fix because the interpreter cannot flag them
+- Responsibility of the programmer to test the program and prevent run-time errors
+- Common errors are misspelling words, which can lead to non-obvious errors at compile-time or run-time
+### Definitions
+- `compile-time error`: An error that is detected when a program is compiled
+- `syntax error`: An instruction that does not follow the programming language rules and is rejected by the compiler
+- `exception`: class that signals a condition that prevents the program from continuing normally. when these occur, an object of the exception class is thrown
+- `run-time error`: an error in a syntactically correct program that causes it to act differently from its specification
+- `logic error`: error in a syntactically correct program that causes it to act different from its specification
