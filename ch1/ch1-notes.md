@@ -71,3 +71,17 @@
 - `source code`: instructions in a programming language that need to be translated before execution on a computer
 - `byte code`: instructions for the python virtual machine
 - `virtual machine`: a program that simulates a CPU that can be implemented efficiently on a variety of actual machines. A given program in Python byte code can be executed by any Python virtual machine, regardless of which CPU is used to run the virtual machine itself
+
+## 1.7 Analyzing Your First Program
+- Python programs contain one or more lines of instructions or statements that are translated/executed by the interpreter
+- Comments begin with `#`, are not statements, and are often used to provide descriptive info to the programmer
+- A function is a collection of instructions that carry out a specific task
+- Using a function requires that you specify the name of the function and any values the function needs to carry out its task
+- Sequence of characters enclosed in quotation marks is called a string, can use single or double quotes
+- Indenting in Python must be consistent
+### Definitions
+- `statement`: syntactical unit in a program, in Python this is either a simple statement or a compound statement
+- `comment`: explanation to help the human reader understand a section of a program; ignored by interpreter
+- `function`: sequence of statements that can be invoked multiple times, with different values for its parameter variables
+- `argument`: value supplied to a function or method call, or one of the values combined by an operator
+- `string`: a sequence of characters
