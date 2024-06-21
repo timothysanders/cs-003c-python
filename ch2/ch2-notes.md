@@ -62,3 +62,47 @@
 
 ## 2.2 Arithmetic
 ### Basic Arithmetic Operations
+- Python supports basic arithmetic operations: addition, subtraction, multiplication, and division
+  - Addition: `a + b`
+  - Subtraction: `a - b`
+  - Multiplication: `a * b`
+  - Division: `a / b`
+- The symbols used for these operations are called operators
+- Combination of variables, literals, operations and parentheses is called an expression
+- Parentheses are used just like in algebra
+- If you mix `int` and `float` in an expression, the result is `float`
+### Powers
+- Python uses the exponential operator `**` to denote the power operation, there can be no space between the asterisks
+- Unlike other arithmetic operators, power operators are evaluated from right to left
+### Floor Division and Remainder
+- When dividing two integers with `/`, you get a `float` value returned
+- Floor division can be performed by using `//`
+  - For positive integers, floor division computes the quotient and discards the fractional part
+  - For example `7 / 4 == 1.75` but `7 // 4 == 1`
+- To get the remainder of floor division, use the `%` operator (modulus)
+  - For example, `7 % 4 == 3`
+- Floor division and modulus can be used for negative integers and floating-point numbers, but is not covered in this book
+### Calling Functions
+- Functions are collections of instructions to carry out a particular task
+- Most functions return a value, which means the function passes back a value once it has completed its task
+- Values returned by functions can be stored in variables
+- Data provided to the function is called an argument
+- Some functions have optional arguments that are only used in certain situations
+- Pythons documentation will often use square brackets to denote optional arguments
+  - For example, `round(x[, n]) # Returns x rounded to a qholw number or to n decimal places`
+- Some functions take an arbitrary number of functions
+  - For example, `min(7.25, 10.95, 5.95, 6.05)`
+### Mathematical Functions
+- Python contains a standard library that can be used to create a number of powerful programs
+- A library is a collection of code that can be used in your program
+- Python's standard library is organized into a number of modules, with related functions and data types
+- To use functions from a module, you must first import it
+- Many functions are defined within a module, but some can be used without importing any module
+  - These functions are called built-in functions
+### Definitions
+- `expression`: syntactical construct that is made up of constants, variables, functions, and method calls, and operators combining them
+- `floor division`: taking the quotient of two integers and discarding the remainder, notated with `//`
+- `modulus`: the `%` operator that computes the remainder of an integer division
+- `library`: set of modules that can be included in programs
+- `standard library`: collection of modules that come with the interpreter and are available for use in every Python program
+- `built-in function`: a function defined by the language itself that can be used without having to import a module
