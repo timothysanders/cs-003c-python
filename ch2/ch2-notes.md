@@ -125,3 +125,40 @@
 ## 2.5 Special Topic: Line Joining
 - If you have expressions that are too long for a single line, you can continue it on another line if the line break is inside parentheses
 - One can also use `\` to join lines, but this is not as common
+
+## 2.8 Strings
+### The String Type
+- Strings can be stored in variables and accessed as needed, just like numerical values
+- String literals refer to particular strings (like 'hello'), which are specified as characters enclosed in a matching pair of single or double quotes
+- Empty strings contain zero characters
+### Concatenation and Repetition
+- If you have two strings, they can be concatenated into one longer string, which results in all the characters of the first string followed by all the characters of the second
+- In Python, you can concatenate strings by using `+`
+  - Cannot concatenate a string with a numeric value
+- Can also use the `*` operator and an integer value to repeat an instance of a string
+  - For example, `"tim" * 3 == "timtimtim"`
+### Converting Between Numbers and Strings
+- The function `str()` can be used to convert numbers to strings, both `int` and `float`
+- Additionally, you can use the `int()` and `float()` functions to convert a string into the respective data type
+### Strings and Characters
+- Strings are sequences of Unicode characters, individual characters can be accessed based on their position within the string
+- The first character has an index of 0, second is 1, etc.
+- Individual characters of a string are accessed using a subscript notation
+  - `name = "tim"`
+  - `name[0] == "t"`
+- If you try to access an index that does not exist, you will get an index out of range exception
+### String Methods
+- In computer programs, objects are entities that represent values with certain behavior
+- Behavior of an object is given through its methods, which are collections of programming instructions
+- Method name follows the object and is separated by a dot
+  - For example, `name.upper()` where `upper()` is the method
+  - Methods are defined within classes and are called on instances of that class
+    - Versus functions, which can be standalone
+- Method calls can have arguments and return new versions of the literal, they do not change the object in place
+### Definitions
+- `character`: a single letter, digit, or symbol
+- `string`: a sequence of characters
+- `concatenation`: placing one string after another to form a new string
+- `unicode`: a standard code that assigns code values to characters used in scripts around the world
+- `object`: a value of a class type
+- `method`: a sequence of statements that has a name, may have parameter values, and may have a return value. A method (like a function) can be invoked any number of times, with different values for parameters, but can only be applied to an object of the type for which it was defined
