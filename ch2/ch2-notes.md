@@ -106,3 +106,22 @@
 - `library`: set of modules that can be included in programs
 - `standard library`: collection of modules that come with the interpreter and are available for use in every Python program
 - `built-in function`: a function defined by the language itself that can be used without having to import a module
+
+## 2.3 Special Topic: Other Ways to Import Modules
+- Python has a few different ways to import modules
+  - `from math import sqrt, sin, cos`
+  - `from math import *`
+  - `import math`
+    - If you do this last one, you will need to reference your functions like what is shown
+      - `y = math.sqrt(x)`
+
+## 2.4 Special Topic: Combining Assignment and Arithmetic
+- You can use combinations of assignment and arithmetic operations like the examples below
+  - `total += cans`
+    - Is the same as `total = total + cans`
+  - `total *= 2`
+    - Is the same as `total = total * 2`
+
+## 2.5 Special Topic: Line Joining
+- If you have expressions that are too long for a single line, you can continue it on another line if the line break is inside parentheses
+- One can also use `\` to join lines, but this is not as common
