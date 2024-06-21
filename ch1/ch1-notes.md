@@ -112,3 +112,62 @@
 ### Definitions
 - `pseudocode`: high-level description of actions of a program or algorithm, typically using English or informal programming language syntax
 - `algorithm`: an unambiguous, executable, and terminating specification of a way to solve a problem
+
+## 1.10 Computing and Society: Data is Everywhere
+- In early 18th/19th centuries, scientists & engineers created mathematical models to understand the physical world, typically using calculus
+- In 20th century, new statistical methods and computing power led to the ability to model new systems
+- With the ability to easily collect data and utilize computational power, new methods of analyzing data emerge, typically called "data science"
+- Data mining is the ability to find patterns in large data sets, such as clusters in data sets, or identifying abnormal behavior
+- Machine learning is done by creating systems to recognize patterns from data
+- Data science helps enable self-driving cars or computer assisted diagnostics, but requires a level of programming experience
+
+## 1.11 How To: Describing an Algorithm with Pseudocode
+- Initial step of describing an algorithm is to understand the problem statement
+- Step one: determine inputs and outputs
+- Step two: break down the problem into smaller tasks
+- Step three: describe each subtask in pseudocode
+- Step four: test your pseudocode by working a problem
+
+## 1.12 Worked Example: Writing an Algorithm for Tiling a Floor
+
+## 1.13 Chapter Summary
+- Defining "computer program" and programming
+  - programs are sequences of instructions and decisions
+  - very basic instructions are executed in rapid succession
+  - programming is designing and implementing computer programs
+- Describe components of a computer
+  - CPU performs program control and data processing
+  - Storage devices include memory and secondary storage
+- Python language benefits
+  - portable and easy to use language
+  - packages provide code for particular problem domains
+- Python programming environment
+  - text editor is for entering/modifying text, such as python program source code files
+  - Python is case-sensitive
+  - Python interpreter reads Python programs and executes the program instructions
+    - Done through translation of source code into byte code by the compiler
+  - Keep backup copies of work
+- Building blocks of simple programs
+  - comments provide information to programmers
+  - Functions are collections of instructions to perform tasks
+  - Functions are called by specifying name and arguments
+  - strings are sequences of characters enclosed in quotation marks
+- Classifying errors as compile-time or run-time errors
+  - compile-time errors violate the programming language rules and are detected when code is translated to byte code
+  - Exceptions occur when instructions are correct syntactically, but contain instructions that cannot be performed
+  - run-time errors are errors that occur when program is compiled and run, but is producing unexpected results
+- Pseudocode
+  - informal description of steps for solving a problem
+  - Algorithm for solving problem is a sequence of steps that is unambiguous, executable, and terminating
+
+## 1.21 Review Exercises
+- explain the difference between using a computer program and programming a computer
+- Which parts of a computer can store program code? Which can store user data?
+- Which parts of a computer serve to give information to the user? Which parts take user input?
+- A toaster is a single-function device, but a computer can be programmed to carry out different tasks. Is your cell phone a single-function device, or is it a programmable computer?
+- Which programming languages were mentioned in this chapter? When were they invented? By whom?
+- On your computer, find the exact location (folder or directory name) of
+  - Sample file `hello.py`, which you wrote in the editor
+  - Python program launcher `python`
+- How do you discover compile-time errors? How do you discover run-time errors?
+- 
