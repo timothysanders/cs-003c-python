@@ -162,3 +162,15 @@
 - `unicode`: a standard code that assigns code values to characters used in scripts around the world
 - `object`: a value of a class type
 - `method`: a sequence of statements that has a name, may have parameter values, and may have a return value. A method (like a function) can be invoked any number of times, with different values for parameters, but can only be applied to an object of the type for which it was defined
+
+## 2.9 Special Topic: Character Values
+- Characters are stored internally as integer values, which are based on standard sets of codes
+- Python has functions for character encodings, such as `ord()`, which returns the number used to represent a given character, and `chr()`, which is used to return the character associated with a given code
+
+## 2.10 Special Topic: Escape Sequences
+- If you need to use double quotes within a string enclosed in double quotes, you can use the `\` character to escape the double quotes
+  - For example, `"You're \"Welcome\""`
+- Backslashes are not included in the strings
+- Backslashes can be used to escape backslashes as well
+### Definitions
+- `escape sequence`: sequence of characters that starts with an escape character, such as `\n` or `\`
