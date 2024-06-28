@@ -174,3 +174,49 @@
 - Backslashes can be used to escape backslashes as well
 ### Definitions
 - `escape sequence`: sequence of characters that starts with an escape character, such as `\n` or `\`
+
+## 2.11 Computing and Society: International Alphabets and Unicode
+- In 1988, consortium of hardware and software manufacturers started developing a uniform encoding scheme, called "unicode"
+- Unicode is meant to encode text in almost all written languages of the world
+- Python3 fully supports unicode and you can create strings with any unicode characters
+- Unicode contains over 100,000 characters today, with plans to add unicode characters for extinct languages
+### Definitions
+- `unicode`: a standard code that assigns code values to characters used in scripts around the world
+
+## 2.12 Input and Output
+- Most programs ask the user to provide input values
+- User input can be gathered by using the `input()` function
+- The input function should first print a message that tells the user what to enter, this is called a prompt
+- The function then places the cursor immediately following the prompt string
+- Once the user supplies the input, it is returned from the input function as a string which can be stored in a variable
+- To get numeric input from a user, need to convert the string to the appropriate data type, such as `int` or `float`
+- Output can be formatted in a few different ways
+  - Ex: `print("%.2f" % price)` will display the price with two digits after the decimal
+  - Can also right justify by using `print("%10.2f" % price)`
+  - These are examples of format specifiers
+- Format strings can contain one or more format specifiers and literal characters
+- When retrieving numeric values from input, convert them immediately after the input operation
+  - Don't save the input to a string and then reconvert it every time it's used
+### Definitions
+- `prompt`: A string that tells the user what to input
+- `string format operator`: the percent sign `%` used to format a string
+
+## 2.13 How To: Writing Simple Programs
+- Step 1: Understand the problem: What are the inputs? What are the desired outputs?
+- Step 2: Work out examples by hand
+- Step 3: Write pseudocode for computing the answers
+- Step 4: Declare the variables and constants you need, and decide what types of values they hold
+- Step 5: Turn the pseudocode into Python statements
+- Step 6: Provide input and output
+- Step 7: Provide a Python program
+
+## 2.16 Graphics: Simple Drawings
+### Definitions
+- `window`: a desktop component that contains a frame and title bar
+
+## 2.17 How To: Graphics: Drawing Graphical Shapes
+- Problem Statement: Create a program to draw a national flag
+- Step 1: Determine the shapes that you need for the drawing
+- Step 2: Find the coordinates for the shapes
+- Step 3: Write Python statements to draw the shapes
+- Step 4: Write the program that creates the graphics window and includes the drawing instructions at the proper spot in the template
