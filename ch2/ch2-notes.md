@@ -220,3 +220,52 @@
 - Step 2: Find the coordinates for the shapes
 - Step 3: Write Python statements to draw the shapes
 - Step 4: Write the program that creates the graphics window and includes the drawing instructions at the proper spot in the template
+
+## 2.18 Toolbox: Symbolic Processing with SymPy
+- Python has a large ecosystem of additional packages available
+- SymPy must be installed before it can be used, you can do this through running `pip install sympy` on the command line
+- SymPy can be used to solve many complex equations, such as algebraic equations or quadratic equations
+- SymPy can also be used to plot certain equations
+
+## 2.19 Chapter Summary
+#### Declare variables with appropriate names and types
+- Variables are storage locations with names
+- An assignment statement stores a value in a variable
+- A variable is created the first time it is assigned a value
+- Assigning a value to an existing variable replaces the previously stored value
+- The assignment operator `=` does not denote mathematical equality
+- The data type of a value specifies how the value is stored in the computer and what operations can be performed on the value
+- Integers are whole numbers without a fraction part
+- Floating-point numbers contain a fractional part
+- Once a variable is initialized with a value of a particular type, it should always store values of that same type
+- By convention, variable names should start with a lowercase letter
+- Use constants for values that should remain unchanged throughout your program
+- Use comments to add explanations for humans who read your code. The interpreter ignores comments
+#### Write arithmetic expressions in Python
+- Mixing integers and floating-point values in an arithmetic expression yields a floating-point value
+- The `//` operator computes floor division, in which the remainder is discarded
+- The `%` operator computes the remainder of a floor division
+- A function can return a value that can be used as if it were a literal value
+- Python has a standard library that provides functions and data types for your code
+- A library module must be imported into your program before it can be used
+#### Carry out hand calculations when developing an algorithm
+- Pick concrete values for a typical situation to use in a hand calculation
+#### Write programs that process strings
+- Strings are sequences of characters
+- A string literal denotes a particular string
+- The `len()` function returns the number of characters in a string
+- Use the `+` operator to concatenate strings; that is, to put them together to yield a longer string
+- A string can be repeated using the `*` operator
+- The `str()` function converts an integer or floating-point value to a string
+- The `int()` and `float()` functions convert a string containing a number to the numerical value
+- String positions are counted starting at zero
+#### Write programs that read user input and print formatted output
+- Use the `input()` function to read keyboard input
+- To read an integer or floating-point value, use the `input()` function followed by the `int()` or `float()` function
+- Use the string format operator to specify how values should be formatted
+#### Make simple graphical drawings
+- A graphics window is used for creating graphical drawings
+- Geometric shares and text are drawn on a canvas that is contained in a graphics window
+- The canvas has methods for drawing lines, rectangles, and other shapes
+- The canvas stores the current drawing parameters used to draw shapes and text
+- Colors can be specified by name or by their red, green, and blue components
