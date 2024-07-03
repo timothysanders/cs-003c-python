@@ -50,7 +50,7 @@ if abs(r * r - 2.0) < EPSILON:
 ### Definitions
 - `relational operator`: an operator that compares two values, yielding a Boolean result
 
-## 2.4 Special Topic: Lexicographic Ordering of Strings
+## 3.4 Special Topic: Lexicographic Ordering of Strings
 - Python's relational operators compare strings in "lexicographic" order
   - This is similar to how words are sorted in a dictionary
 - Slight differences between dictionary ordering and lexicographic ordering
@@ -63,3 +63,13 @@ if abs(r * r - 2.0) < EPSILON:
 - Often, you will need to include an `if` statement inside of another if statement, this is called a nested set of statements
 - Nesting can go many levels deep, if needed
 - Hand-tracing is the technique of simulating the program's activities on a sheet of paper, either with pseudocode or Python code
+
+## 3.9 Multiple Alternatives
+- Python has a special `elif` syntax that allows for creating if statements with multiple branches
+- As soon as one of the branches is satisfied, no other branch is executed
+- If no branch matches, then a final `else` can be used to clean up any of the remaining statements
+- Generally, we want to go from the most specific use case to the most generic
+
+## 3.10 Toolbox: Sending E-mail
+- MIME - Multi-Purpose Internet Mail Extensions
+- SMTP - Simple Mail Transport Protocol
