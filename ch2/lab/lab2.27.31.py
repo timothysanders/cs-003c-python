@@ -43,7 +43,7 @@ canvas.setColor("green")
 canvas.drawRect(x=10, y=132.5, width=brooklynSpanPixels, height=75)
 
 # Delaware Memorial Bridge
-canvas.setColor("blue")
+canvas.setColor(255, 136, 62)
 canvas.drawRect(x=10, y=232.5, width=delawareSpanPixels, height=75)
 
 # Mackinac Bridge
