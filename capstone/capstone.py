@@ -1,3 +1,11 @@
+# CS-003 - Capstone - Tic-Tac-Toe
+# 7/29/2024
+# Zoraida Rodriguez
+# Timothy Sanders
+#
+# Problem Statement
+# Implement a program that allows two players to play tic-tac-toe
+
 import sys
 
 from ezgraphics import GraphicsWindow
@@ -196,8 +204,9 @@ class Game:
                 row_column = self.game_board.convert_digit_to_row_column(validated_play)
                 if player == "one":
                     self.game_board.place_move(row_column[0], row_column[1], self.player_one_marker)
-                    if self.game_board.check_draw():
-                        print("Game has ended in a draw!")
+                    if self.game_board.check_win():
+                        end_state = True
+                        print(f"Player {player_name} wins!")
                         play_again = input("Would you like to play again? (Y/N): ")
                         if play_again == "Y":
                             self.game_board.close_board()
@@ -205,9 +214,8 @@ class Game:
                             self.play()
                         else:
                             sys.exit()
-                    if self.game_board.check_win():
-                        end_state = True
-                        print(f"Player {player_name} wins!")
+                    if self.game_board.check_draw():
+                        print("Game has ended in a draw!")
                         play_again = input("Would you like to play again? (Y/N): ")
                         if play_again == "Y":
                             self.game_board.close_board()
@@ -223,7 +231,7 @@ class Game:
                         end_state = True
                         print(f"Player {player_name} wins!")
                         play_again = input("Would you like to play again? (Y/N): ")
-                        if play_again == "Y":
+                        if play_again.upper().strip() == "Y":
                             self.game_board.close_board()
                             self.reset_game()
                             self.play()
@@ -252,37 +260,34 @@ if __name__ == "__main__":
 
 """
 > python capstone/capstone.py
-
 Welcome to Tic Tac Toe!
-Player one, please enter your name: Tim
+Player one, please enter your name: Zoe
 Player one, please enter your marker: X
-Player two, please enter your name: Danielle
+Player two, please enter your name: Tim
 Player two, please select your marker: O
 ------------------------------
 Game start!
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 6
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 6
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 6
+ERROR: You must specify an unoccupied space!
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 2
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 3
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 9
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 5
 Tim, please enter a space (1-9) on the board (0 to restart the game) : 7
-Player Tim wins!
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 4
+Player Zoe wins!
 Would you like to play again? (Y/N): Y
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 0
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 6
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 1
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 2
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 3
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 4
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 5
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 6
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 8
 Tim, please enter a space (1-9) on the board (0 to restart the game) : 7
-Player Tim wins!
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 9
+Game has ended in a draw!
 Would you like to play again? (Y/N): N
 """
 
@@ -292,15 +297,17 @@ Would you like to play again? (Y/N): N
 Welcome to Tic Tac Toe!
 Player one, please enter your name: Tim
 Player one, please enter your marker: X
-Player two, please enter your name: Danielle
+Player two, please enter your name: Zoe
 Player two, please select your marker: O
 ------------------------------
 Game start!
 Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 2
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 4
 Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
-Danielle, please enter a space (1-9) on the board (0 to restart the game) : 3
-Tim, please enter a space (1-9) on the board (0 to restart the game) : 9
+Zoe, please enter a space (1-9) on the board (0 to restart the game) : 6
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 7
 Player Tim wins!
 Would you like to play again? (Y/N): N
 """
