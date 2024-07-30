@@ -32,6 +32,7 @@ class Board:
         self.board = None
         self.canvas = None
 
+    ## Method to create the game board itself using ezgraphics
     def draw_board(self):
         self.board = GraphicsWindow(630, 630)
         self.canvas = self.board.canvas()
@@ -54,6 +55,7 @@ class Board:
             )
         self.board.show()
 
+    ## Closes the window in ezgraphics to allow for resetting the game
     def close_board(self):
         self.board.close()
 
@@ -129,6 +131,7 @@ class Board:
 
 class Game:
 
+    ## Initializes the Game() class with a new board
     def __init__(self):
         self.game_board = Board()
         self.player_one_name = None
@@ -136,21 +139,38 @@ class Game:
         self.player_two_name = None
         self.player_two_marker = None
 
+    ## Prompts the player for a name, then assigns it to an
+    ## instance variable
+    #  @param player: int
+    #      - The number of the player to get the name from
+    #  @param message: str
+    #      - The message to display to the player in the input function
     def get_player_name(self, player: int, message: str) -> None:
         if player == 1:
             self.player_one_name = input(message)
         else:
             self.player_two_name = input(message)
 
+    ## Ask for the ‘X’ or ‘O’ option, then assigns it to an
+    ## instance variable.
+    #  @param player: int
+    #      - The player to ask for the marker from
+    #  @param message: str
+    #      - The message to be displayed to the player in the input function
     def get_player_marker(self, player: int, message: str) -> None:
         if player == 1:
             self.player_one_marker = input(message)
         else:
             self.player_two_marker = input(message)
 
+    ## Resets the game board for a new game
     def reset_game(self):
         self.game_board = Board()
 
+    ## Performs validation on the plays made by the user, enforces that the entry is a digit
+    ## that is between 1-9 (zeros to reset the game are handled elsewhere
+    #  @param - digit: str
+    #      - The raw input from the user
     def validate_play(self, digit: str) -> int:
         if not digit.isdigit():
             raise TypeError("You must provide a value that is a valid digit!")
@@ -158,6 +178,8 @@ class Game:
             raise ValueError("You must provide a value between 1-9!")
         return int(digit)
 
+    ## Manages the game flow, takes turns between players, and checks
+    ## for win/draw conditions after each move.
     def play(self):
         self.game_board.draw_board()
         end_state = False
