@@ -1,8 +1,11 @@
+import sys
+
 from ezgraphics import GraphicsWindow
 
 
 class Board:
 
+    ## Initializes the board class and configures the empty board
     def __init__(self):
         self.LINE_CONFIGS = [
             (200, 0, 15, 629),
@@ -51,6 +54,14 @@ class Board:
             )
         self.board.show()
 
+    def close_board(self):
+        self.board.close()
+
+    ## Converts a move (1-9) to row and column coordinates.
+    #  @param moveDigit: int
+    #    - the numbered space on the board to place a marker
+    #  @return tuple(int, int)
+    #    - a tuple of the corresponding row and column of the input digit
     def convert_digit_to_row_column(self, digit: int) -> tuple[int, int]:
         if digit <= 3:
             row = 0
@@ -63,6 +74,13 @@ class Board:
             column = (digit - 1) % 3
         return row, column
 
+    ## Place a move on the board if the cell is empty.
+    #  @param row: int
+    #    - the specific row (0-2) to place the marker on
+    #  @param column: int
+    #    - the specific column (0-2) to place the marker on
+    #  @return bool
+    #    - indicates whether the move was placed successfully
     def place_move(self, row: int, column: int, marker: str) -> bool:
         text_x = (column * 210) + 50
         text_y = (row * 210) + 25
@@ -77,6 +95,11 @@ class Board:
         else:
             return False
 
+    ## Checks if the given marker (‘X’, ‘O’) has won.
+    #  @param marker: str
+    #      - The specific marker to check the win condition for
+    #  @return bool
+    #      - returns True if the specified marker has won, otherwise False
     def check_win(self) -> bool:
         win_state = False
         # Check rows for winning combinations
@@ -96,6 +119,12 @@ class Board:
                 and self.board_spaces[0][2] != "-"):
             win_state = True
         return win_state
+
+    ## Checks if the game has ended in a draw by checking to see if any spaces are yet to be played
+    #  @return bool
+    #      - returns True if the game is a draw, otherwise False
+    def check_draw(self) -> bool:
+        return not any("-" in row for row in self.board_spaces)
 
 
 class Game:
@@ -136,14 +165,34 @@ class Game:
         player_name = self.player_one_name
         while not end_state:
             try:
-                user_play = input(f"{player_name}, please enter a space on the board (1-9): ")
+                user_play = input(f"{player_name}, please enter a space (1-9) on the board (0 to restart the game) : ")
+                if user_play == "0":
+                    self.game_board.close_board()
+                    self.reset_game()
+                    self.play()
                 validated_play = self.validate_play(user_play)
                 row_column = self.game_board.convert_digit_to_row_column(validated_play)
                 if player == "one":
                     self.game_board.place_move(row_column[0], row_column[1], self.player_one_marker)
+                    if self.game_board.check_draw():
+                        print("Game has ended in a draw!")
+                        play_again = input("Would you like to play again? (Y/N): ")
+                        if play_again == "Y":
+                            self.game_board.close_board()
+                            self.reset_game()
+                            self.play()
+                        else:
+                            sys.exit()
                     if self.game_board.check_win():
                         end_state = True
                         print(f"Player {player_name} wins!")
+                        play_again = input("Would you like to play again? (Y/N): ")
+                        if play_again == "Y":
+                            self.game_board.close_board()
+                            self.reset_game()
+                            self.play()
+                        else:
+                            sys.exit()
                     player_name = self.player_two_name
                     player = "two"
                 else:
@@ -151,6 +200,13 @@ class Game:
                     if self.game_board.check_win():
                         end_state = True
                         print(f"Player {player_name} wins!")
+                        play_again = input("Would you like to play again? (Y/N): ")
+                        if play_again == "Y":
+                            self.game_board.close_board()
+                            self.reset_game()
+                            self.play()
+                        else:
+                            sys.exit()
                     player_name = self.player_one_name
                     player = "one"
             except (TypeError, ValueError) as ve:
@@ -171,3 +227,58 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+> python capstone/capstone.py
+
+Welcome to Tic Tac Toe!
+Player one, please enter your name: Tim
+Player one, please enter your marker: X
+Player two, please enter your name: Danielle
+Player two, please select your marker: O
+------------------------------
+Game start!
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 6
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 7
+Player Tim wins!
+Would you like to play again? (Y/N): Y
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 0
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 3
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 4
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 6
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 7
+Player Tim wins!
+Would you like to play again? (Y/N): N
+"""
+
+"""
+> python capstone/capstone.py
+
+Welcome to Tic Tac Toe!
+Player one, please enter your name: Tim
+Player one, please enter your marker: X
+Player two, please enter your name: Danielle
+Player two, please select your marker: O
+------------------------------
+Game start!
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 1
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 2
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 5
+Danielle, please enter a space (1-9) on the board (0 to restart the game) : 3
+Tim, please enter a space (1-9) on the board (0 to restart the game) : 9
+Player Tim wins!
+Would you like to play again? (Y/N): N
+"""
